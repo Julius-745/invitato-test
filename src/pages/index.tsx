@@ -21,10 +21,13 @@ import { useEffect } from 'react';
             </Box>
                 <Box position={"absolute"} marginLeft={"2rem"} marginTop={"1rem"}>
                 <SlideFade in={isOpen} offsetY='20px'>
-                    <Box>
-                        <Text fontFamily={roboto.style.fontFamily} color={"#67544e"}>
-                            THE WEDDING OF
-                        </Text>
+                    <Flex flexDirection={"column"} gap={10}>
+                        <Box>
+                            <Text fontFamily={roboto.style.fontFamily} color={"#67544e"}>
+                                THE WEDDING OF
+                            </Text>
+                        </Box>
+                        <Box>
                         <Heading style={{
                             fontSize: "5rem",
                             fontFamily: clicker.style.fontFamily,
@@ -32,13 +35,16 @@ import { useEffect } from 'react';
                         }}>
                             Nailal & Via
                         </Heading>
+                        </Box>
+                        <Box>
                         <Text fontFamily={roboto_latin.style.fontFamily} color={"#67544e"}>
                             “And I knew exactly how old Walt Disney’s Cinderella felt when she found her prince.”
                         </Text>
                         <Text color={"#67544e"}>
                             — Elizabeth Young
                         </Text>
-                    </Box>
+                        </Box>
+                    </Flex>
                 </SlideFade>
             </Box>
         </Stack>
