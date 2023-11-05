@@ -1,55 +1,24 @@
-import { Stack, Heading, SlideFade, Text, useDisclosure, Box, Image, Flex, HStack } from '@chakra-ui/react';
-import { roboto, clicker, roboto_latin } from '../../styles/font';
-import { useEffect } from 'react';
+import { Stack, Box, Image, HStack, Text, Button } from '@chakra-ui/react';
+import TitleComponent from '@/components/Title';
 
  
  const Home = () => {
-    const { isOpen, onToggle } = useDisclosure()
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-          onToggle()
-        }, 1000);
-        return () => clearTimeout(timer);
-      }, []);
-
- return (
-    <HStack>
-        <Stack>
-            <Box position={"relative"}>
-                    <Image src={'/image/main.jpg'} margin={"-2rem"} backgroundAttachment={"fixed"} position={"sticky"} width={"90%"} height={"60rem"}/>
-            </Box>
-                <Box position={"absolute"} marginLeft={"2rem"} marginTop={"1rem"}>
-                <SlideFade in={isOpen} offsetY='20px'>
-                    <Flex flexDirection={"column"} gap={10}>
-                        <Box>
-                            <Text fontFamily={roboto.style.fontFamily} color={"#67544e"}>
-                                THE WEDDING OF
-                            </Text>
-                        </Box>
-                        <Box>
-                        <Heading style={{
-                            fontSize: "5rem",
-                            fontFamily: clicker.style.fontFamily,
-                            color: "#67544e"
-                        }}>
-                            Nailal & Via
-                        </Heading>
-                        </Box>
-                        <Box>
-                        <Text fontFamily={roboto_latin.style.fontFamily} color={"#67544e"}>
-                            “And I knew exactly how old Walt Disney’s Cinderella felt when she found her prince.”
-                        </Text>
-                        <Text color={"#67544e"}>
-                            — Elizabeth Young
-                        </Text>
-                        </Box>
-                    </Flex>
-                </SlideFade>
-            </Box>
-        </Stack>
-    </HStack>
- ); 
+    return (
+        <HStack>
+            <Stack maxWidth={"70%"} float={"left"}>
+                <Box opacity={0.8}>
+                        <Image src={'/image/main.jpg'} height={"60rem"}/>
+                </Box>
+                <TitleComponent isMobileScreen={false} />
+            </Stack>
+            <Stack maxW={"30%"} overflow={"auto"} marginTop={"-2.0rem"} alignItems={"center"}>
+                <Box position={"relative"} opacity={0.8} marginRight={"-2rem"}>
+                        <Image src={'/image/main.jpg'} margin={"-2rem"} height={"60rem"}/>
+                </Box>
+                <TitleComponent isMobileScreen={true}/>
+            </Stack>
+        </HStack>
+    ); 
  }
  
  export default Home;
